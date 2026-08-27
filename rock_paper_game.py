@@ -1,9 +1,9 @@
 import random
 
 def get_choices():
-    player_choice = input("Enter a choice (Rock , Paper, Scissors) :")
+    player_choice = input("Enter a choice (Rock , Paper, Scissors) :").lower()
     options = ["Rock", "Paper", "Scissors"]
-    computer_choice = random.choice(options)
+    computer_choice = random.choice(options).lower()
     choices = { "Player" : player_choice, 
                "Computer" : computer_choice}
     return choices
@@ -14,18 +14,18 @@ def check_win(player,computer):
     #print(f"You chose : {player} , Computer chose : {computer}")
     if player == computer:
         return "It's a tie!" 
-    elif player == "Rock":
-        if computer == "Scissors":
+    elif player == "rock":
+        if computer == "scissors":
             return "Rock smashes Scissors! You win."
         else:
             return "Paper covers the Rock! You lose."
-    elif player == "Paper":
-            if computer == "Scissors":
+    elif player == "paper":
+            if computer == "scissors":
                 return "Scissors cuts Paper! You loss."
             else:
                 return "Paper covers the Rock! You win." 
-    elif player == "Scissors":
-            if computer == "Paper":
+    elif player == "scissors":
+            if computer == "paper":
                 return "Scissors cuts Paper! You win."
             else:
                 return "Rock smashes Scissors! You lose!"
